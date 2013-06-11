@@ -7,8 +7,6 @@ import com.google.gwt.core.shared.GWT;
 import com.google.gwt.editor.client.Editor.Path;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
-import com.sencha.gxt.cell.core.client.TextButtonCell;
-import com.sencha.gxt.cell.core.client.form.DateCell;
 import com.sencha.gxt.core.client.ValueProvider;
 import com.sencha.gxt.data.shared.ListStore;
 import com.sencha.gxt.data.shared.ModelKeyProvider;
@@ -25,8 +23,10 @@ import com.sencha.gxt.widget.core.client.grid.Grid;
  */
 public class DataGrid implements IsWidget {
 
+	public static int RECORDS = 400;
+	
 	//Data provider interface
-	interface Props extends PropertyAccess<Data>{
+	interface Properties extends PropertyAccess<Data>{
 		ValueProvider<Data, String> name();
 		ValueProvider<Data, String> symbol();
 		ValueProvider<Data, String> date();
@@ -47,7 +47,7 @@ public class DataGrid implements IsWidget {
 	@Override
 	public Widget asWidget() {
 		//create the property access
-		Props properties = GWT.create(Props.class);
+		Properties properties = GWT.create(Properties.class);
 		
 		//Create colum configurations
 		ColumnConfig<Data, String> nameCol = new ColumnConfig<Data, String>(properties.name(),60,"Name");
@@ -78,7 +78,7 @@ public class DataGrid implements IsWidget {
 		
 		//create the liststore for the grid data
 		ListStore<Data> store = new ListStore<Data>(properties.key());
-		store.addAll(TestData.getData());
+		store.addAll(new TestData(RECORDS).getData());
 		
 		Grid<Data> grid = new Grid<Data>(store,cm);
 		

@@ -51,6 +51,11 @@ public class Data {
 		this.notes = notes;
 	}
 	
+	@Override
+	public String toString(){
+		return name;
+	}
+	
 	/*
 	 ===================
 	 GETTERS AND SETTERS
@@ -92,19 +97,19 @@ public class Data {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public boolean isAvailable() {
+	public Boolean isAvailable() {
 		return available;
 	}
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
-	public boolean isChecked() {
+	public Boolean isChecked() {
 		return checked;
 	}
 	public void setChecked(boolean checked) {
 		this.checked = checked;
 	}
-	public boolean isCompliant() {
+	public Boolean isCompliant() {
 		return compliant;
 	}
 	public void setCompliant(boolean compliant) {

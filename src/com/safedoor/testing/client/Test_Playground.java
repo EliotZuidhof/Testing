@@ -4,8 +4,6 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer;
-import com.sencha.gxt.widget.core.client.container.NorthSouthContainer;
-import com.sencha.gxt.widget.core.client.tree.Tree;
 
 /**
  * A class to create a sandbox for testing the limits of gxt elements.
@@ -16,8 +14,7 @@ import com.sencha.gxt.widget.core.client.tree.Tree;
 public class Test_Playground implements EntryPoint {
 	
 	private CustomerTree tree;
-	private TreeInput input;
-	private DataGrid grid;
+	private LiveDataGrid grid;
 	
 	/**
 	 * The module entry point
@@ -40,16 +37,15 @@ public class Test_Playground implements EntryPoint {
 		tree = new CustomerTree();
 		customerPanel.setWidget(tree.asWidget());
 		
-		grid = new DataGrid();
-		gridPanel.setWidget(grid.asWidget());
+		grid = new LiveDataGrid();
 		
 		//Create the tree data
-		for(int i=0;i<500;i++){
+		for(int i=0;i<200;i++){
 			tree.addCustomer("Customer "+(i+1));
 		}
 		
 		layout.add(customerPanel);
-		layout.add(gridPanel);
+		layout.add(grid.asWidget());
 		RootPanel.get().add(layout);
 	}
 	
