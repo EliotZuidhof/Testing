@@ -16,14 +16,16 @@
 	<!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
 	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
 	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
-	<inherits name='com.sencha.gxt.theme.gray.Gray'/>
+	<inherits name='com.sencha.gxt.theme.gray.Gray' />
 
 	<!-- Other module inherits                                      -->
-	
+
 	<!-- Specify the app entry point class.                         -->
-	<entry-point class='com.safedoor.testing.client.Test_Playground' />
+	<!-- <entry-point class='com.safedoor.testing.client.Test_Playground' /> -->
+	<entry-point class='com.safedoor.testing.client.SkinDemo' />
 
 	<!-- Specify the paths for translatable code                    -->
 	<source path='client' />
 	<source path='shared' />
+	<entry-point class="com.safedoor.testing.client.SkinDemo" />
 </module>
