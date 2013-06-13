@@ -1,0 +1,2 @@
+serviceClass: com.safedoor.testing.client.ExampleService
+path: 272B767471A28BC084EC71AAA3F3C607.gwt.rpc

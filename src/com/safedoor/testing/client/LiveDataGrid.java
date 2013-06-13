@@ -112,7 +112,7 @@ public class LiveDataGrid implements IsWidget{
 				Scheduler.get().scheduleDeferred(new ScheduledCommand() {
 					@Override
 					public void execute() {
-						loader.load(1,10);
+						loader.load(0,10);
 					}
 				});
 			}
