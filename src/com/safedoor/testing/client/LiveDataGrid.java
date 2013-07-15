@@ -1,6 +1,7 @@
 package com.safedoor.testing.client;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.google.gwt.core.client.GWT;
@@ -106,6 +107,7 @@ public class LiveDataGrid implements IsWidget{
 		view.setForceFit(true);*/
 		
 		Grid<Data> grid = new Grid<Data>(store,cm){
+			int time;
 			@Override
 			protected void onAfterFirstAttach() {
 				super.onAfterFirstAttach();
@@ -116,11 +118,21 @@ public class LiveDataGrid implements IsWidget{
 					}
 				});
 			}
+			protected void onLoad(){
+				super.onLoad();
+				System.out.print("Load");
+			}
+			protected void onAttach(){
+				super.onAttach();
+				System.out.print("Attach");
+			}
 		};
 		grid.setLoadMask(true);
 		grid.setLoader(loader);
 		grid.getView().setForceFit(true);
 		//grid.setView(view);
+		
+		
 		
 		VerticalLayoutContainer vlc = new VerticalLayoutContainer();
 		vlc.setBorders(true);
